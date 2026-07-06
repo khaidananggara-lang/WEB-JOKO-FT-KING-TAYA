@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOKO FT ANTI KALAH · Profesional</title>
+    <!-- Google Font & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4f7fc;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            line-height: 1.5;
+            color: #1a2634;
+        }
+
+        .card {
+            max-width: 1300px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 40px;
+            box-shadow: 0 25px 50px -10px rgba(0, 20, 40, 0.15);
+            padding: 2.8rem 2.5rem;
+            transition: all 0.2s ease;
+        }
+
+        /* header / brand */
+        .brand {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.8rem;
+            border-bottom: 2px solid #eef3f8;
+            padding-bottom: 1.8rem;
+        }
+
+        .brand-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            background: #0b1c2e;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 14px -6px rgba(0, 30, 60, 0.2);
+        }
+
+        .brand-title {
+            font-weight: 700;
+            font-size: 2.1rem;
+            letter-spacing: -0.5px;
+            color: #0b1c2e;
+        }
+
+        .brand-title span {
+            background: linear-gradient(145deg, #d4a13e, #b87c2b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .badge-anti {
+            background: #eef3f8;
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #1e3b4f;
+            letter-spacing: 0.3px;
+            border: 1px solid #d8e2ec;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-anti i {
+            color: #b87c2b;
+            font-size: 0.9rem;
+        }
+
+        /* grid harga */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .price-item {
+            background: #f9fbfd;
+            border-radius: 28px;
+            padding: 1.6rem 0.8rem;
+            text-align: center;
+            transition: 0.2s ease-in-out;
+            border: 1px solid #e7edf3;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+            backdrop-filter: blur(2px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .price-item:hover {
+            background: #ffffff;
+            border-color: #c9d8e6;
+            box-shadow: 0 16px 28px -12px rgba(0, 30, 60, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .fee-label {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #4b637a;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            background: #eef3f8;
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 0.75rem;
+        }
+
+        .fee-value {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #0b1c2e;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+
+        .fee-value small {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5d738a;
+            margin-left: 2px;
+        }
+
+        .price-value {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #1f3a4f;
+            background: #eef3f8;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            margin-top: 10px;
+            display: inline-block;
+            letter-spacing: 0.2px;
+        }
+
+        .price-value i {
+            color: #b87c2b;
+            margin-right: 5px;
+            font-size: 0.85rem;
+        }
+
+        .divider-light {
+            margin: 2.2rem 0 1.8rem;
+            border: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #dae3ec, transparent);
+        }
+
+        .footer-note {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.8rem;
+            color: #3b5a74;
+            font-weight: 450;
+        }
+
+        .footer-note i {
+            color: #b87c2b;
+            margin-right: 6px;
+        }
+
+        .footer-note .trust {
+            background: #eef3f8;
+            padding: 0.3rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            border: 1px solid #dce5ef;
+        }
+
+        .footer-note .trust i {
+            color: #2d7a4b;
+        }
+
+        /* respon kecil */
+        @media (max-width: 680px) {
+            .card {
+                padding: 1.8rem 1.2rem;
+            }
+            .brand {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+            .brand-title {
+                font-size: 1.8rem;
+            }
+            .price-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 0.9rem;
+            }
+            .price-item {
+                padding: 1.2rem 0.4rem;
+            }
+            .fee-value {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .price-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* efek shine halus */
+        .price-item {
+            position: relative;
+            overflow: hidden;
+        }
+        .price-item::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .price-item:hover::after {
+            opacity: 0.2;
+        }
+
+        /* wa badge kecil */
+        .wa-badge {
+            margin-top: 6px;
+            font-size: 0.7rem;
+            background: #25D36610;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            color: #1f7b4a;
+            border: 1px solid #25D36620;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            transition: 0.2s;
+        }
+        .price-item:hover .wa-badge {
+            background: #25D36620;
+            border-color: #25D36640;
+        }
+        .wa-badge i {
+            font-size: 0.7rem;
+            color: #25D366;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <!-- header profesional -->
+    <div class="brand">
+        <div class="brand-left">
+            <div class="brand-icon">
+                <i class="fas fa-shield-halved"></i>
+            </div>
+            <div class="brand-title">
+                JOKO <span>FT</span> ANTI KALAH
+            </div>
+        </div>
+        <div class="badge-anti">
+            <i class="fas fa-circle-check"></i> 100% transparan
+        </div>
+    </div>
+
+    <!-- daftar harga clean, setiap item adalah link WA -->
+    <div class="price-grid">
+        <!-- 500P -->
+        <a href="https://wa.me/6285954684314?text=Halo%20king%2C%20gw%20mau%20pesen%20joko%20ft%20fee(500P)%2C%20di%20jawab%20ya%20king%F0%9F%99%8F" target="_blank" class="price-item">
+            <span class="fee-label"><i class="fas fa-tag"></i> FEE</span>
+            <div class="fee-value">500<small>P</small></div>
+            <div class="price-value"><i class="fas fa-coins"></i> 500P</div>
+            <span class="wa-badge"><i class="fab fa-whatsapp"></i> pesan via WA</span>
+        </a>
+        <!-- 750P -->
+        <a href="https://wa.me/6285954684314?text=Halo%20king%2C%20gw%20mau%20pesen%20joko%20ft%20fee(750P)%2C%20di%20jawab%20ya%20king%F0%9F%99%8F" target="_blank" class="price-item">
+            <span class="fee-label"><i class="fas fa-tag"></i> FEE</span>
+            <div class="fee-value">750<small>P</small></div>
+            <div class="price-value"><i class="fas fa-coins"></i> 750P</div>
+            <span class="wa-badge"><i class="fab fa-whatsapp"></i> pesan via WA</span>
+        </a>
+        <!-- 1K -->
+        <a href="https://wa.me/6285954684314?text=Halo%20king%2C%20gw%20mau%20pesen%20joko%20ft%20fee(1K)%2C%20di%20jawab%20ya%20king%F0%9F%99%8F" target="_blank" class="price-item">
+            <span class="fee-label"><i class="fas fa-tag"></i> FEE</span>
+            <div class="fee-value">1<small>K</small></div>
+            <div class="price-value"><i class="fas fa-coins"></i> 1K</div>
+            <span class="wa-badge"><i class="fab fa-whatsapp"></i> pesan via WA</span>
+        </a>
+        <!-- 1.5K -->
+        <a href="https://wa.me/6285954684314?text=Halo%20king%2C%20gw%20mau%20pesen%20joko%20ft%20fee(1.5K)%2C%20di%20jawab%20ya%20king%F0%9F%99%8F" target="_blank" class="price-item">
+            <span class="fee-label"><i class="fas fa-tag"></i> FEE</span>
+            <div class="fee-value">1.5<small>K</small></div>
+            <div class="price-value"><i class="fas fa-coins"></i> 1.5K</div>
+            <span class="wa-badge"><i class="fab fa-whatsapp"></i> pesan via WA</span>
+        </a>
+        <!-- 2K -->
+        <a href="https://wa.me/6285954684314?text=Halo%20king%2C%20gw%20mau%20pesen%20joko%20ft%20fee(2K)%2C%20di%20jawab%20ya%20king%F0%9F%99%8F" target="_blank" class="price-item">
+            <span class="fee-label"><i class="fas fa-tag"></i> FEE</span>
+            <div class="fee-value">2<small>K</small></div>
+            <div class="price-value"><i class="fas fa-coins"></i> 2K</div>
+            <span class="wa-badge"><i class="fab fa-whatsapp"></i> pesan via WA</span>
+        </a>
+        <!-- 2.5K -->
+        <a href="https://wa.me/6285954684314?text=Halo%20king%2C%20gw%20mau%20pesen%20joko%20ft%20fee(2.5K)%2C%20di%20jawab%20ya%20king%F0%9F%99%8F" target="_blank" class="price-item">
+            <span class="fee-label"><i class="fas fa-tag"></i> FEE</span>
+            <div class="fee-value">2.5<small>K</small></div>
+            <div class="price-value"><i class="fas fa-coins"></i> 2.5K</div>
+            <span class="wa-badge"><i class="fab fa-whatsapp"></i> pesan via WA</span>
+        </a>
+        <!-- 3K -->
+        <a href="https://wa.me/6285954684314?text=Halo%20king%2C%20gw%20mau%20pesen%20joko%20ft%20fee(3K)%2C%20di%20jawab%20ya%20king%F0%9F%99%8F" target="_blank" class="price-item">
+            <span class="fee-label"><i class="fas fa-tag"></i> FEE</span>
+            <div class="fee-value">3<small>K</small></div>
+            <div class="price-value"><i class="fas fa-coins"></i> 3K</div>
+            <span class="wa-badge"><i class="fab fa-whatsapp"></i> pesan via WA</span>
+        </a>
+        <!-- 3.5K -->
+        <a href="https://wa.me/6285954684314?text=Halo%20king%2C%20gw%20mau%20pesen%20joko%20ft%20fee(3.5K)%2C%20di%20jawab%20ya%20king%F0%9F%99%8F" target="_blank" class="price-item">
+            <span class="fee-label"><i class="fas fa-tag"></i> FEE</span>
+            <div class="fee-value">3.5<small>K</small></div>
+            <div class="price-value"><i class="fas fa-coins"></i> 3.5K</div>
+            <span class="wa-badge"><i class="fab fa-whatsapp"></i> pesan via WA</span>
+        </a>
+        <!-- 4K -->
+        <a href="https://wa.me/6285954684314?text=Halo%20king%2C%20gw%20mau%20pesen%20joko%20ft%20fee(4K)%2C%20di%20jawab%20ya%20king%F0%9F%99%8F" target="_blank" class="price-item">
+            <span class="fee-label"><i class="fas fa-tag"></i> FEE</span>
+            <div class="fee-value">4<small>K</small></div>
+            <div class="price-value"><i class="fas fa-coins"></i> 4K</div>
+            <span class="wa-badge"><i class="fab fa-whatsapp"></i> pesan via WA</span>
+        </a>
+        <!-- 4.5K -->
+        <a href="https://wa.me/6285954684314?text=Halo%20king%2C%20gw%20mau%20pesen%20joko%20ft%20fee(4.5K)%2C%20di%20jawab%20ya%20king%F0%9F%99%8F" target="_blank" class="price-item">
+            <span class="fee-label"><i class="fas fa-tag"></i> FEE</span>
+            <div class="fee-value">4.5<small>K</small></div>
+            <div class="price-value"><i class="fas fa-coins"></i> 4.5K</div>
+            <span class="wa-badge"><i class="fab fa-whatsapp"></i> pesan via WA</span>
+        </a>
+        <!-- 5K -->
+        <a href="https://wa.me/6285954684314?text=Halo%20king%2C%20gw%20mau%20pesen%20joko%20ft%20fee(5K)%2C%20di%20jawab%20ya%20king%F0%9F%99%8F" target="_blank" class="price-item">
+            <span class="fee-label"><i class="fas fa-tag"></i> FEE</span>
+            <div class="fee-value">5<small>K</small></div>
+            <div class="price-value"><i class="fas fa-coins"></i> 5K</div>
+            <span class="wa-badge"><i class="fab fa-whatsapp"></i> pesan via WA</span>
+        </a>
+    </div>
+
+    <hr class="divider-light">
+
+    <!-- footer / informasi tambahan clean -->
+    <div class="footer-note">
+        <span><i class="fas fa-bolt"></i> semua harga dalam P (poin) · tidak ada biaya tersembunyi</span>
+        <span class="trust"><i class="fas fa-shield"></i> JOKO FT · ANTI KALAH</span>
+    </div>
+</div>
+</body>
+</html>
